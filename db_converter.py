@@ -136,6 +136,11 @@ def parse(input_filename, output_filename):
                     type = "timestamp with time zone"
                 elif type == "double":
                     type = "double precision"
+                elif type.startswith("float("):
+                    float_temp = type.split("(")[1].rstrip(")")
+                    float_length = int(float_temp.split(",")[0])
+                    float_precision = int(float_temp.split(",")[1])
+                    type = "numeric(%s, %s)" % (float_length, float_precision)
                 elif type == "blob":
                     type = "bytea"
                 elif type.startswith("enum(") or type.startswith("set("):
