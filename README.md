@@ -8,6 +8,14 @@ notably, it doubles the lengths of VARCHARs due to a unicode size problem we
 had, places indexes on all foreign keys, and presumes you're using Django
 for column typing purposes.
 
+favrik-specific changes
+-----------------------
+
+These are on top of the `gitlab` branch:
+
+- Convert floats to numeric using the same precision and scale.
+
+
 GitLab-specific changes
 -----------------------
 
