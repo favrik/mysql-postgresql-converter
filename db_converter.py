@@ -133,7 +133,7 @@ def parse(input_filename, output_filename):
                     type = "int2"
                     set_sequence = True
                 elif type == "datetime":
-                    type = "timestamp with time zone"
+                    type = "timestamp without time zone"
                 elif type == "double":
                     type = "double precision"
                 elif type.startswith("float("):
