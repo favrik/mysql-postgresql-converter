@@ -109,7 +109,7 @@ def parse(input_filename, output_filename):
 
                 # See if it needs type conversion
                 final_type = None
-                final_default = None
+                final_default = 'FALSE'
                 set_sequence = None
                 if type == "tinyint(1)":
                     type = "int4"
