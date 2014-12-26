@@ -145,6 +145,9 @@ def parse(input_filename, output_filename):
                     type = "timestamp without time zone"
                 elif type == "double":
                     type = "double precision"
+                elif type == "float":
+                    type = "double precision"
+                    extra = extra.replace("DEFAULT '0'", 'DEFAULT 0.0')
                 elif type.startswith("float("):
                     float_temp = type.split("(")[1].rstrip(")")
                     float_length = int(float_temp.split(",")[0])
